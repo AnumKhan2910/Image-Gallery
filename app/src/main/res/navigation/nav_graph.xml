@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/imageCategoryListFragment">
+
+    <fragment
+        android:id="@+id/imageCategoryListFragment"
+        android:name="com.example.imagegallery.ui.fragments.ImageCategoryListFragment"
+        android:label="ImageCategoryListFragment" >
+        <action
+            android:id="@+id/action_imageCategoryListFragment_to_imageListFragment"
+            app:destination="@id/imageListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageListFragment"
+        android:name="com.example.imagegallery.ui.fragments.ImageListFragment"
+        android:label="ImageListFragment" >
+        <argument
+            android:name="category"
+            app:argType="string"
+            android:defaultValue='""' />
+        <action
+            android:id="@+id/action_imageListFragment_to_imageFragment"
+            app:destination="@id/imageFragment" />
+        <argument
+            android:name="query"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="search"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.imagegallery.ui.fragments.ImageFragment"
+        android:label="ImageFragment" >
+        <argument
+            android:name="image"
+            app:argType="com.example.imagegallery.entity.Image" />
+    </fragment>
+</navigation>
