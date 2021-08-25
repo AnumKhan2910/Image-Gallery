@@ -1,5 +1,5 @@
 # Image-Gallery
-An Image Gallery helps you to search and download Image.
+An Image Gallery that helps you to search and download Image.
 
 Built Using:
 
