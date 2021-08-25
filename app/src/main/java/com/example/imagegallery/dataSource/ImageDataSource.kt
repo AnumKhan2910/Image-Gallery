@@ -19,7 +19,7 @@ class ImageDataSource(private var webServices: WebServices,
             LoadResult.Page(
                 data = responseBody.imageList,
                 prevKey = if (nextPageNumber > 0) nextPageNumber - 1 else null,
-                nextKey = if (nextPageNumber < 25) nextPageNumber + 1 else null
+                nextKey = if (nextPageNumber < responseBody.totalHits/20) nextPageNumber + 1 else null
             )
         } catch (e : Exception){
             LoadResult.Error(e)
